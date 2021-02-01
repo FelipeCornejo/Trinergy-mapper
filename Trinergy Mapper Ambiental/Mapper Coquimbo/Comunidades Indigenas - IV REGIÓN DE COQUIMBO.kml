@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+<Placemark>
+<description>
+<table border="0">
+<tr>
+<td>
+Corporación Nacional de Desarrollo Indígena <br />
+CONADI</td>
+<td>
+</td>
+<img src="../Logos/trinergy.jpg" border="0" width="240" height="90" alt="" />
+</tr>
+</table>
+ <br />
+<table border="0">
+<tr>
+<td>
+<b>
+Beneficio</b>
+</td>
+<td>
+:</td>
+<td>
+SI</td>
+</tr>
+<tr>
+<td>
+<b>
+Ingreso</b>
+</td>
+<td>
+:</td>
+<td>
+223.327</td>
+</tr>
+<tr>
+<td>
+<b>
+instituc</b>
+</td>
+<td>
+:</td>
+<td>
+4-2-C</td>
+</tr>
+<tr>
+<td>
+<b>
+region</b>
+</td>
+<td>
+:</td>
+<td>
+IV REGIÓN DE COQUIMBO</td>
+</tr>
+<tr>
+<td>
+<b>
+provincia</b>
+</td>
+<td>
+:</td>
+<td>
+CHOAPA</td>
+</tr>
+<tr>
+<td>
+<b>
+comuna</b>
+</td>
+<td>
+:</td>
+<td>
+SALAMANCA</td>
+</tr>
+<tr>
+<td>
+<b>
+comunidad</b>
+</td>
+<td>
+:</td>
+<td>
+DIAGUITA TAUCAN</td>
+</tr>
+<tr>
+<td>
+<b>
+registro</b>
+</td>
+<td>
+:</td>
+<td>
+2</td>
+</tr>
+<tr>
+<td>
+<b>
+fuente_inf</b>
+</td>
+<td>
+:</td>
+<td>
+LIC. PÚBLICA ID 765-15-LE16</td>
+</tr>
+<tr>
+<td>
+<b>
+fecha</b>
+</td>
+<td>
+:</td>
+<td>
+2016</td>
+</tr>
+</table>
+<br />
+<strong>
+Fecha de Descarga: </strong>
+11/02/2020 16:40:20</description>
+<Point>
+<coordinates>
+-70.969170834766146,-31.747071786133972</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<description>
+<table border="0">
+<tr>
+<td>
+Corporación Nacional de Desarrollo Indígena <br />
+CONADI</td>
+<td>
+</td>
+<img src="../Logos/trinergy.jpg" border="0" width="240" height="90" alt="" />
+</tr>
+</table>
+ <br />
+<table border="0">
+<tr>
+<td>
+<b>
+Beneficio</b>
+</td>
+<td>
+:</td>
+<td>
+SI</td>
+</tr>
+<tr>
+<td>
+<b>
+Ingreso</b>
+</td>
+<td>
+:</td>
+<td>
+352.390</td>
+</tr>
+<tr>
+<td>
+<b>
+instituc</b>
+</td>
+<td>
+:</td>
+<td>
+4-4-C</td>
+</tr>
+<tr>
+<td>
+<b>
+region</b>
+</td>
+<td>
+:</td>
+<td>
+IV REGIÓN DE COQUIMBO</td>
+</tr>
+<tr>
+<td>
+<b>
+provincia</b>
+</td>
+<td>
+:</td>
+<td>
+LIMARÍ</td>
+</tr>
+<tr>
+<td>
+<b>
+comuna</b>
+</td>
+<td>
+:</td>
+<td>
+OVALLE</td>
+</tr>
+<tr>
+<td>
+<b>
+comunidad</b>
+</td>
+<td>
+:</td>
+<td>
+MANUELA HUERTA CAMPILLAY</td>
+</tr>
+<tr>
+<td>
+<b>
+registro</b>
+</td>
+<td>
+:</td>
+<td>
+4</td>
+</tr>
+<tr>
+<td>
+<b>
+fuente_inf</b>
+</td>
+<td>
+:</td>
+<td>
+LIC. PÚBLICA ID 765-15-LE16</td>
+</tr>
+<tr>
+<td>
+<b>
+fecha</b>
+</td>
+<td>
+:</td>
+<td>
+2016</td>
+</tr>
+</table>
+<br />
+<strong>
+Fecha de Descarga: </strong>
+11/02/2020 16:40:20</description>
+<Point>
+<coordinates>
+-71.200894402454651,-30.600370838043716</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<description>
+<table border="0">
+<tr>
+<td>
+Corporación Nacional de Desarrollo Indígena <br />
+CONADI</td>
+<td>
+</td>
+<img src="../Logos/trinergy.jpg" border="0" width="240" height="90" alt="" />
+</tr>
+</table>
+ <br />
+<table border="0">
+<tr>
+<td>
+<b>
+Beneficio</b>
+</td>
+<td>
+:</td>
+<td>
+SI</td>
+</tr>
+<tr>
+<td>
+<b>
+Ingreso</b>
+</td>
+<td>
+:</td>
+<td>
+178.445</td>
+</tr>
+<tr>
+<td>
+<b>
+instituc</b>
+</td>
+<td>
+:</td>
+<td>
+4-219-C</td>
+</tr>
+<tr>
+<td>
+<b>
+region</b>
+</td>
+<td>
+:</td>
+<td>
+IV REGIÓN DE COQUIMBO</td>
+</tr>
+<tr>
+<td>
+<b>
+provincia</b>
+</td>
+<td>
+:</td>
+<td>
+ELQUI</td>
+</tr>
+<tr>
+<td>
+<b>
+comuna</b>
+</td>
+<td>
+:</td>
+<td>
+PAIGUANO</td>
+</tr>
+<tr>
+<td>
+<b>
+comunidad</b>
+</td>
+<td>
+:</td>
+<td>
+CANIHUANTE DE COCHIHUAZ</td>
+</tr>
+<tr>
+<td>
+<b>
+registro</b>
+</td>
+<td>
+:</td>
+<td>
+219</td>
+</tr>
+<tr>
+<td>
+<b>
+fuente_inf</b>
+</td>
+<td>
+:</td>
+<td>
+LIC. PÚBLICA ID 765-15-LE16</td>
+</tr>
+<tr>
+<td>
+<b>
+fecha</b>
+</td>
+<td>
+:</td>
+<td>
+2016</td>
+</tr>
+</table>
+<br />
+<strong>
+Fecha de Descarga: </strong>
+11/02/2020 16:40:20</description>
+<Point>
+<coordinates>
+-70.504914223212779,-30.042492688087066</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<description>
+<table border="0">
+<tr>
+<td>
+Corporación Nacional de Desarrollo Indígena <br />
+CONADI</td>
+<td>
+</td>
+<img src="../Logos/trinergy.jpg" border="0" width="240" height="90" alt="" />
+</tr>
+</table>
+ <br />
+<table border="0">
+<tr>
+<td>
+<b>
+Beneficio</b>
+</td>
+<td>
+:</td>
+<td>
+SI</td>
+</tr>
+<tr>
+<td>
+<b>
+Ingreso</b>
+</td>
+<td>
+:</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<b>
+instituc</b>
+</td>
+<td>
+:</td>
+<td>
+4-0-C</td>
+</tr>
+<tr>
+<td>
+<b>
+region</b>
+</td>
+<td>
+:</td>
+<td>
+IV REGIÓN DE COQUIMBO</td>
+</tr>
+<tr>
+<td>
+<b>
+provincia</b>
+</td>
+<td>
+:</td>
+<td>
+LIMARÍ</td>
+</tr>
+<tr>
+<td>
+<b>
+comuna</b>
+</td>
+<td>
+:</td>
+<td>
+OVALLE</td>
+</tr>
+<tr>
+<td>
+<b>
+comunidad</b>
+</td>
+<td>
+:</td>
+<td>
+MANUELA HUERTA CAMPILLAY</td>
+</tr>
+<tr>
+<td>
+<b>
+registro</b>
+</td>
+<td>
+:</td>
+<td>
+0</td>
+</tr>
+<tr>
+<td>
+<b>
+fuente_inf</b>
+</td>
+<td>
+:</td>
+<td>
+LIC. PÚBLICA ID 765-15-LE16</td>
+</tr>
+<tr>
+<td>
+<b>
+fecha</b>
+</td>
+<td>
+:</td>
+<td>
+2016</td>
+</tr>
+</table>
+<br />
+<strong>
+Fecha de Descarga: </strong>
+11/02/2020 16:40:20</description>
+<Point>
+<coordinates>
+-71.200894402454651,-30.600370838043716</coordinates>
+</Point>
+</Placemark>
+<Folder>
+    <name>Imagenes</name> <!-- leyenda e imagen-->
+    <ScreenOverlay>
+        <name>Titulo</name>
+        <Icon>
+            <href>../Logos/trinergy.png</href>
+        </Icon>
+        <overlayXY x="-0.05" y="1.5" xunits="fraction" yunits="fraction"/>
+        <screenXY x="-0.1" y="5" xunits="pixels" yunits="insetPixels"/>
+        <rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+        <size x="264" y="70" xunits="pixels" yunits="pixels"/>
+    </ScreenOverlay>
+    <!--<ScreenOverlay> leyenda
+        <name>Leyenda</name>
+        <Icon>
+            <href>images/leyenda.png</href>
+        </Icon>
+        <overlayXY x="0" y="1.8" xunits="fraction" yunits="fraction"/>
+        <screenXY x="20" y="1" xunits="pixels" yunits="insetPixels"/>
+        <rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+        <size x="219" y="511" xunits="pixels" yunits="pixels"/>
+    </ScreenOverlay>-->
+</Folder>
+</Document>
+</kml>

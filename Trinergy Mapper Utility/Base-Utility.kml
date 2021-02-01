@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Trinergy Utility Mapped.kml</name>
+	<LookAt> <!-- Mirada inicial -->
+		<longitude>-70.8243651320725</longitude>
+		<latitude>-35.93607255214458</latitude>
+		<altitude>0</altitude>
+		<heading>8.133414289003884</heading>
+		<tilt>0</tilt>
+		<range>7625408.304322976</range>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+	</LookAt>
+
+	<Schema name="NuevaLine" id="NuevaLine"> <!-- Tabla de nueva linea-->
+		<SimpleField type="Variant " name="LINEA"><displayName>LINEA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="DECRETO"><displayName>DECRETO</displayName>
+</SimpleField>
+		<SimpleField type="string" name="ESTADO"><displayName>ESTADO</displayName>
+</SimpleField>
+	<SimpleField type="double" name="CAPACIDAD"><displayName>CAPACIDAD</displayName>
+</SimpleField>
+		<SimpleField type="double" name="TRAZADO"><displayName>TRAZADO</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="DecConstru" id="DecConstru"> <!-- Tabla Declarados en Construcción -->
+		<SimpleField type="string" name="NOMBRE"><displayName>NOMBRE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="EMPRESA"><displayName>EMPRESA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="TIPO"><displayName>TIPO</displayName>
+</SimpleField>
+		<SimpleField type="double" name="CAPACIDAD"><displayName>CAPACIDAD</displayName>
+</SimpleField>
+		<SimpleField type="string" name="FECHA"><displayName>FECHA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="CONECTION"><displayName>CONNECTION</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="GranCliente" id="GranCliente"> <!-- Tabla Grandes Clientes -->
+		<SimpleField type="string" name="CLIENTE"><displayName>CLIENTE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="BARRA"><displayName>BARRA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="SUMINISTRADOR"><displayName>SUMINISTRADOR</displayName>
+</SimpleField>
+		<SimpleField type="double" name="DEMANDA"><displayName>DEMANDA</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="ElectroTerminal" id="ElectroTerminal"> <!-- Tabla Grandes Clientes -->
+		<SimpleField type="string" name="CLIENTE"><displayName>CLIENTE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="BARRA"><displayName>BARRA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="SUMINISTRADOR"><displayName>SUMINISTRADOR</displayName>
+</SimpleField>
+		<SimpleField type="double" name="DEMANDA"><displayName>DEMANDA</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="Puertos" id="Puertos"> <!-- Tabla Grandes Clientes -->
+		<SimpleField type="string" name="NOMBRE"><displayName>NOMBRE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="PROPIETARIO"><displayName>PROPIETARIO</displayName>
+</SimpleField>
+		<SimpleField type="string" name="ACTIVIDAD"><displayName>ACTIVIDAD</displayName>
+</SimpleField>
+		<SimpleField type="double" name="CALADO"><displayName>CALADO</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="NuevoProye" id="NuevoProye"> <!-- Tabla Declarados en Construcción -->
+		<SimpleField type="string" name="NOMBRE"><displayName>NOMBRE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="EMPRESA"><displayName>EMPRESA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="TIPO"><displayName>TIPO</displayName>
+</SimpleField>
+		<SimpleField type="double" name="CAPACIDAD"><displayName>CAPACIDAD</displayName>
+</SimpleField>
+		<SimpleField type="string" name="INTERCONEXION"><displayName>INTERCONEXION</displayName>
+</SimpleField>
+		<SimpleField type="string" name="PUNTO"><displayName>PUNTO</displayName>
+</SimpleField>	
+		<SimpleField type="string" name="RCA"><displayName>RCA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="APROBACION"><displayName>APROBACION</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="Ampliacion" id="Ampliacion"> <!-- Tabla Declarados en Construcción -->
+		<SimpleField type="string" name="OBRA"><displayName>OBRA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="DECRETO"><displayName>DECRETO</displayName>
+</SimpleField>
+		<SimpleField type="string" name="TIPO"><displayName>TIPO</displayName>
+</SimpleField>
+		<SimpleField type="double" name="SALIDA"><displayName>SALIDA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="ENTRADA"><displayName>ENTRADA</displayName>
+</SimpleField>
+		<SimpleField type="string" name="ESTADO"><displayName>ESTADO</displayName>
+</SimpleField>
+	</Schema>
+
+	<Schema name="NuevaSE" id="NuevaSE"> <!-- Tabla Nuevas SE -->
+		<SimpleField type="string" name="NOMBRE"><displayName>NOMBRE</displayName>
+</SimpleField>
+		<SimpleField type="string" name="DECRETO"><displayName>DECRETO</displayName>
+</SimpleField>
+		<SimpleField type="string" name="TRANSFOR"><displayName>TRANSFOR</displayName>
+</SimpleField>
+		<SimpleField type="double" name="ESTADO"><displayName>ESTADO</displayName>
+</SimpleField>
+	</Schema>
+
+	<!-- seccion de globos -->
+	<Style id="Linea">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>0.2</scale>
+			<Icon>
+				<href>Logos/road.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ccffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVAS LINEAS DECRETADAS POR LA CNE</h2.5></font></b></td></tr>
+			</table>
+			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Linea de Transmision</b></td>=<td>$[NuevaLine/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto CNE</b></td>=<td>$[NuevaLine/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[NuevaLine/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MVA)</b></td>=<td>$[NuevaLine/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>De Donde se obtuvo el trazado?</b></td>=<td>$[NuevaLine/TRAZADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>F53D3DFF</color>
+			<width>7</width>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+
+	<Style id="fol_constru0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/solar.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/solar.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de Conexion</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+	
+	<Style id="fol_nproye0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/solargris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/solargris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/eolico.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/eolico.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/eolicogris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/eolicogris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru2">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/barrel.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru2">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/barrel.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye2">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/barrelgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye2">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/barrelgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru3">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/water.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru3">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/water.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye3">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/watergris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye3">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/watergris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru4">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/Geothermal.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru4">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/Geothermal.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye4">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/Geothermalgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye4">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/Geothermalgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru5">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/CSP.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru5">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/CSP.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye5">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/CSPgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye5">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/CSPgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_constru6">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/leaf.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_constru6">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/leaf.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>PROYECTO DECLARADO EN CONSTRUCCION</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Proyecto</b></td>=<td>$[DecConstru/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[DecConstru/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[DecConstru/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[DecConstru/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[DecConstru/FECHA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Instalacion en donde se Conectara</b></td>=<td>$[DecConstru/CONNECTION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye6">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/leafgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye6">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/leafgris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nproye7">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/clientegris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nproye7">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/clientegris.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVOS SASC/SUCT APROBADOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Nuevo Proyecto</b></td>=<td>$[NuevoProye/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Empresa</b></td>=<td>$[NuevoProye/EMPRESA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado</b></td>=<td>$[NuevoProye/ESTADO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo</b></td>=<td>$[NuevoProye/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Capacidad (MW)</b></td>=<td>$[NuevoProye/CAPACIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha Estimada de Interconexion</b></td>=<td>$[NuevoProye/INTERCONEXION]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Punto de conexion</b></td>=<td>$[NuevoProye/PUNTO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado RCA</b></td>=<td>$[NuevoProye/RCA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha de aprobacion</b></td>=<td>$[NuevoProye/APROBACION]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_nuevaSE">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/plug.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle> <!-- falta posición debajo de transf -->
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVAS SUBESTACIONES DECRETADAS POR LA CNE</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre de la Subestacion</b></td>=<td>$[NuevaSE/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto CNE</b></td>=<td>$[NuevaSE/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Incluye Transformacion?</b></td>=<td>$[NuevaSE/TRANSFORM]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[NuevaSE/ESTADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_nuevaSE">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/plug.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle> <!-- falta posición debajo de transf -->
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>NUEVAS SUBESTACIONES DECRETADAS POR LA CNE</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre de la Subestacion</b></td>=<td>$[NuevaSE/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto CNE</b></td>=<td>$[NuevaSE/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Incluye Transformacion?</b></td>=<td>$[NuevaSE/TRANSFORM]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[NuevaSE/ESTADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_cliente0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/cliente.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>GRANDES CLIENTES DEL CEN</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Cliente</b></td>=<td>$[GranCliente/CLIENTE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Barra de Retiro</b></td>=<td>$[GranCliente/BARRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Suministrador</b></td>=<td>$[GranCliente/SUMINISTRADOR]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Demanda (MW)</b></td>=<td>$[GranCliente/DEMANDA]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_cliente0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/cliente.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>GRANDES CLIENTES DEL CEN</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del Cliente</b></td>=<td>$[GranCliente/CLIENTE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Barra de Retiro</b></td>=<td>$[GranCliente/BARRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Suministrador</b></td>=<td>$[GranCliente/SUMINISTRADOR]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Demanda (MW)</b></td>=<td>$[GranCliente/DEMANDA]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_terminal0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/electroterminal.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>CLIENTES ELECTROTERMINALES</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre</b></td>=<td>$[ElectroTerminal/CLIENTE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Barra de Retiro</b></td>=<td>$[ElectroTerminal/BARRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha PES</b></td>=<td>$[ElectroTerminal/SUMINISTRADOR]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Demanda (MW)</b></td>=<td>$[ElectroTerminal/DEMANDA]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_terminal0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/electroterminal.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>CLIENTES ELECTROTERMINALES</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre</b></td>=<td>$[ElectroTerminal/CLIENTE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Barra de Retiro</b></td>=<td>$[ElectroTerminal/BARRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Fecha PES</b></td>=<td>$[ElectroTerminal/SUMINISTRADOR]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Demanda (MW)</b></td>=<td>$[ElectroTerminal/DEMANDA]</td></tr>
+ 				</tr>
+
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_puertos0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/puerto.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>CLIENTES PUERTOS</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del puerto</b></td>=<td>$[Puertos/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Propietario</b></td>=<td>$[Puertos/PROPIETARIO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Actividad Principal</b></td>=<td>$[Puertos/ACTIVIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Calado</b></td>=<td>$[Puertos/CALADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_puertos0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/puerto.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>CLIENTES PUERTOS</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Nombre del puerto</b></td>=<td>$[Puertos/NOMBRE]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Propietario</b></td>=<td>$[Puertos/PROPIETARIO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Actividad Principal</b></td>=<td>$[Puertos/ACTIVIDAD]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Calado</b></td>=<td>$[Puertos/CALADO]</td></tr>
+ 				</tr>
+			</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_ampliacion0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/add.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>AMPLIACION DE S/E EXISTENTE</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Obra</b></td>=<td>$[Ampliacion/OBRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto</b></td>=<td>$[Ampliacion/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo de Obra</b></td>=<td>$[Ampliacion/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Sale de Servicio</b></td>=<td>$[Ampliacion/SALIDA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Entra en Servicio</b></td>=<td>$[Ampliacion/ENTRADA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[Ampliacion/ESTADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_ampliacion0">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/add.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>AMPLIACION DE S/E EXISTENTE</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Obra</b></td>=<td>$[Ampliacion/OBRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto</b></td>=<td>$[Ampliacion/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo de Obra</b></td>=<td>$[Ampliacion/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Sale de Servicio</b></td>=<td>$[Ampliacion/SALIDA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Entra en Servicio</b></td>=<td>$[Ampliacion/ENTRADA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[Ampliacion/ESTADO]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="fol_ampliacion1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/add2.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>AMPLIACION DE S/E EXISTENTE</h2.5></font></b></td></tr>
+			</table>
+    		<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Obra</b></td>=<td>$[Ampliacion/OBRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto</b></td>=<td>$[Ampliacion/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo de Obra</b></td>=<td>$[Ampliacion/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Sale de Servicio</b></td>=<td>$[Ampliacion/SALIDA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Entra en Servicio</b></td>=<td>$[Ampliacion/ENTRADA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[Ampliacion/ESTADO]</td></tr>
+ 				</tr>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+
+	<Style id="map_ampliacion1">
+		<IconStyle>
+			<scale>1.16667</scale>
+			<Icon>
+				<href>Logos/add2.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>00ffffff</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table WIDTH="300" border=0 cellpadding=0 cellspacing=1 summary="">
+			<tr><td width="100%" valign="middle" align="left"><img src="Logos/trinergy.jpg" border="0" width="240" height="90" alt=""></td></tr>
+  			<tr cellpadding=1><td width="100%" valign="middle" align="center" bgcolor=#8bb145><b><font face="Arial" color="#ffffff"><h2.5>AMPLIACION DE S/E EXISTENTE</h2.5></font></b></td></tr>
+			</table>
+			<table WIDTH="300" border=0 cellpadding=0 cellspacing=0>
+				<font face="Arial" size="3" color="#050000">
+ 				<tr>
+    			<table border="1" padding="0">
+				<tr><td bgcolor="#AAAAAA"><b>Obra</b></td>=<td>$[Ampliacion/OBRA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Decreto</b></td>=<td>$[Ampliacion/DECRETO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Tipo de Obra</b></td>=<td>$[Ampliacion/TIPO]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Sale de Servicio</b></td>=<td>$[Ampliacion/SALIDA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Entra en Servicio</b></td>=<td>$[Ampliacion/ENTRADA]</td></tr>
+				<tr><td bgcolor="#AAAAAA"><b>Estado de Licitacion</b></td>=<td>$[Ampliacion/ESTADO]</td></tr>
+ 				</tr>
+				</table></font>
+			</table>
+			<table WIDTH="200" border=0 cellpadding=1 cellspacing=1 bgcolor=#F3E2A9 summary="">
+			</table>]]>
+			</text>
+		</BalloonStyle>
+	</Style>
+	<!-- fin seccion -->
+
+	<!-- seccion estilo en mapa -->
+	<StyleMap id="Linea0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#Linea</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#Linea</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+
+	<StyleMap id="DecConstru1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru1</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye1</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru2</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye2</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru3</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye3</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru4</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye4</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru5</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye5</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="DecConstru6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_constru6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_constru6</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye6</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="nproye7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nproye7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nproye7</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="Cliente0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_cliente0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_cliente0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="Terminal0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_terminal0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_terminal0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="Puertos0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_puertos0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_puertos0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="NuevaSE0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_nuevaSE</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_nuevaSE</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="Ampliacion0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_ampliacion0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_ampliacion0</styleUrl>
+		</Pair>
+	</StyleMap>
+
+	<StyleMap id="Ampliacion1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#fol_ampliacion1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#map_ampliacion1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<!-- fin seccion -->
+
+	<!-- seccion contenido y carpetas -->
+	<!-- inicio carpeta MAYOR-->
+	<Folder>
+		<name>SISTEMA ELECTRICO NACIONAL</name><!-- cambiar nombre -->|
+		<open>1</open>
+		
+		<!-- inicio carpeta Declarados en Construccion -->
+		<Folder>
+			<name>Declarados en Construccion</name>
+			<!-- declaradotag -->
+			
+		</Folder>
+		
+		<Folder>
+			<name>Nuevas S/E decretadas por CNE</name>
+			<!-- nuevasubtag -->
+
+		</Folder>
+
+		<Folder>
+			<name>Grandes Consumos</name>
+			<!-- clientetag -->
+
+		</Folder>
+
+		<Folder>
+			<name>Electroterminales</name>
+			<!-- electroterminaltag -->
+
+		</Folder>
+
+		<Folder>
+			<name>Puertos</name>
+			<!-- puertostag -->
+
+		</Folder>
+
+		<Folder>
+			<name>Ampliaciones a S/E</name>
+			<!-- ampliaciontag -->
+
+		</Folder>
+
+		<Folder>
+			<name>Nuevas Lineas</name>
+			<!-- nuevalineatag -->
+		
+		</Folder>
+
+		<Folder>
+			<name>Nuevos SASC/SUCT Aprobados</name>
+			<!-- nuevoproyetag -->
+
+		</Folder>
+		
+		<!-- inicio carpeta IMAGENES-->
+		<Folder>
+			<name>Imagenes</name> <!-- leyenda e imagen-->
+			<ScreenOverlay>
+				<name>Titulo</name>
+				<Icon>
+					<href>Logos/trinergy.png</href>
+				</Icon>
+				<overlayXY x="-0.05" y="1.5" xunits="fraction" yunits="fraction"/>
+				<screenXY x="-0.1" y="5" xunits="pixels" yunits="insetPixels"/>
+				<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+				<size x="219" y="58" xunits="pixels" yunits="pixels"/>
+			</ScreenOverlay>
+			<ScreenOverlay>
+				<name>Leyenda</name>
+				<Icon>
+					<href>Logos/leyendaTrinergy.png</href>
+				</Icon>
+				<overlayXY x="-0.05" y="1.8" xunits="fraction" yunits="fraction"/>
+				<screenXY x="-0.1" y="1" xunits="pixels" yunits="insetPixels"/>
+				<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+				<size x="219" y="511" xunits="pixels" yunits="pixels"/>
+			</ScreenOverlay>
+		</Folder>
+		<!-- fin carpeta IMAGENES -->
+	</Folder>
+	<!-- fin carpeta MAYOR -->
+	<!-- fin seccion -->
+</Document>
+</kml>
